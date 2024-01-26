@@ -162,7 +162,7 @@
                     <h2>You have Register with LUCKY mobiles</h2>
                     <h5>Verify your email address to login with the below given link</h5>
                     <br/><br/>
-                     <a href='http://localhost/finalProject/verify-email.php?token=$verify_token'>Click Here</a>
+                     <a href='http://localhost/finalProject/verify-email.php?token=$verify_token'>Click Here to verify</a>
             
             ";
 
@@ -196,7 +196,7 @@
                     <h2>You have Register with LUCKY mobiles</h2>
                     <h5>Verify your email address to login with the below given link</h5>
                     <br/><br/>
-                     <a href='http://localhost/finalProject/verify-email.php?token=$Verify_token'>Click Here</a>
+                     <a href='http://localhost/finalProject/verify-email.php?token=$Verify_token'>Click Here to verify</a>
             
             ";
 
@@ -228,7 +228,7 @@
                     <h2>Hello</h2>
                     <h5>You are receving this email because we received a password reset request for your account.</h5>
                     <br/><br/>
-                     <a href='http://localhost/finalProject/password-change.php?token=$token&email=$get_email'>Click Here</a>
+                     <a href='http://localhost/finalProject/password-change.php?token=$token&email=$get_email'>Click Here to verify</a>
             
             ";
 
@@ -309,6 +309,40 @@
                 array(':name',$reviewer),array(':email',$email),array(':message',$message));
 
             $this->db->queryDB($sql,Database::EXECUTE,$values);
+        }
+
+        public function sendemail_to_customer()
+        {
+            $mail = new PHPMailer(true);
+
+            // $mail->SMTPDebug = 2; //2SMTP::DEBUG_SERVER
+            $mail->isSMTP();
+            $mail->SMTPAuth   = true;
+
+            $mail->Host       = 'smtp.gmail.com';
+            $mail->Username   = 'tharsikan650@gmail.com';                     //SMTP username
+            $mail->Password   = 'kcidvznokomcjejh';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS ;   //'tls'"PHPMailer::ENCRYPTION_SMTPS"         //Enable implicit TLS encryption
+            $mail->Port       = 465 ;//587
+
+            $mail->setFrom('tharsikan650@gmail.com',$this->username);
+            $mail->addAddress($this->email);
+
+            $mail->isHTML(true);                                  //Set email format to HTML
+            $mail->Subject = 'Email verification to the cutomer from LUCKEY mobile';
+
+            $email_templete="
+                    <h2>You have ordered from LUCKY mobiles</h2>
+                    <h5>Thank you for ordering</h5>
+                    <br/><br/>
+                     <a href='http://localhost/finalProject/login.php'>Click Here to check your order </a>
+            
+            ";
+
+            $mail->Body =$email_templete;
+            $mail->send();
+            // echo "<h5>Message has been sent</h5>";
+
         }
         
         

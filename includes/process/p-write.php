@@ -29,16 +29,36 @@
             if(isset($_SESSION['is_Sadmin']))
             {
                 $Sadmin=new SuperAdmin($_SESSION['email']);
-                $Sadmin->insertIntoImageDB($name,$filePath);
-                $Sadmin->insertIntoProductDB($name,$description,$price);
-                $msg='Product added successfully';
+                $result1=$Sadmin->insertIntoImageDB($name,$filePath);
+                $result2=$Sadmin->insertIntoProductDB($name,$description,$price);
+                if($result2)
+                {
+                    
+                    $msg=$result2;
+                    
+                }
+                else
+                {
+                    $msg='Product added successfully';
+                }
+                
+                
             }
             else if(isset($_SESSION['is_Admin']))
             {
                 $admin=new Admin($_SESSION['email']);
-                $admin->insertIntoImageDB($name,$filePath);
-                $admin->insertIntoProductDB($name,$description,$price);
-                $msg='Product added successfully';
+                $result1=$admin->insertIntoImageDB($name,$filePath);
+                $result2=$admin->insertIntoProductDB($name,$description,$price);
+                if($result2)
+                {
+                    
+                    $msg=$result2;
+                    
+                }
+                else
+                {
+                    $msg='Product added successfully';
+                }
             }
         }
     }

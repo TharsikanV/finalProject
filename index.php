@@ -22,7 +22,7 @@
                     }
                     else if(isset($_SESSION['email']))/////////////////////////////////////////////
                     {                                             ///
-                        echo '<a href="UserOrder.php">Your Ordes</a>'; ///
+                        echo '<a href="UserOrder.php">Your Orders</a>'; ///
                     }                                             ///
                     /////////////////////////////////////////////////
                 ?>
@@ -174,7 +174,7 @@
                         {   
                             echo "<form action=\"signOut.php\" method=\"POST\">";
                             echo '<img src="images/signout.png">';
-                            echo '<input type="submit" name="Signout" value="Sign Out">';
+                            echo '<input type="submit" class="signout" name="Signout" value="Sign Out">';
                             echo "</form>";
                             
                             //echo '<a href="logout.php">Sign Out</a>';
@@ -306,6 +306,15 @@
     font-weight:600;
     border-radius: 0.5rem;
     background:linear-gradient(to right,#5001fb,#8e0af3);
+}
+
+.signout{
+    background-color:#056df4;
+    color:#fff;
+    border:2px solid #a09efc;
+    outline-style:solid;
+    outline-color:#0905dc;
+    border-radius:5px;
 }
 
 .button:hover{

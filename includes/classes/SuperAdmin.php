@@ -60,20 +60,42 @@ class SuperAdmin
     }
 
     public function insertIntoProductDB($name,$description,$price){
-        $sql="INSERT INTO product (name,description,price) VALUES (:name,:description,:price)";
+        try{
+            $sql="INSERT INTO product (name,description,price) VALUES (:name,:description,:price)";
 
         $values=array(array(':name',$name),array(':description',$description),array(':price',$price));
 
         $this->db->queryDB($sql,Database::EXECUTE, $values);
+        }
+        catch(PDOException $e)
+        {
+            if ($e->getCode() == '23000') {
+                // Duplicate entry error code (this may vary depending on your database)
+                // Handle the duplicate product name error
+                return "Error: Product with the same name already exists.";
+            } 
+        }
+        
+        
     }
 
     public function insertIntoImageDB($name,$location){
+        try{
+            $sql="INSERT INTO image (name,location) VALUES (:name,:location)";
 
-        $sql="INSERT INTO image (name,location) VALUES (:name,:location)";
-
-        $values=array(array(':name',$name),array(':location',$location));
-
-        $this->db->queryDB($sql,Database::EXECUTE, $values);
+            $values=array(array(':name',$name),array(':location',$location));
+    
+            $this->db->queryDB($sql,Database::EXECUTE, $values);
+        }
+        catch(PDOException $e)
+        {
+            if ($e->getCode() == '23000') {
+                // Duplicate entry error code (this may vary depending on your database)
+                // Handle the duplicate product name error
+                return "Error: Product with the same image already exists.";
+            } 
+        }
+       
     }
     
     public function deleteProductDB($name)

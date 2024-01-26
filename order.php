@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Convert | Export html Table to CSV & EXCEL File</title>
+    <title>Order</title>
     <link rel="stylesheet" type="text/css" href="order.css">
 </head>
 
@@ -52,7 +52,8 @@
                          $reader=new BlogReader();
                          $orders=$reader->getOrderFromDB();
 
-                         if(isset($orders))
+                        //  if(isset($orders))
+                         if($orders)
                          {
                             foreach($orders as $order)
                             {

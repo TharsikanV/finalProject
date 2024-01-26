@@ -4,7 +4,7 @@
     $msg='';
     if(isset($_POST['submit']))
     {
-        $name=$_POST['name'];
+        $name=strtolower($_POST['name']);
         // htmlspecialchars($_POST["search_query"], ENT_QUOTES, 'UTF-8');
         
         if ($h->isEmpty(array($name)))
