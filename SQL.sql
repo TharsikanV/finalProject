@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 16, 2024 at 04:57 AM
--- Server version: 8.0.32
+-- Generation Time: Jan 26, 2024 at 10:59 AM
+-- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -88,19 +88,16 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `status` tinyint NOT NULL DEFAULT '0',
   `amount` varchar(225) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
 INSERT INTO `orders` (`id`, `email`, `product`, `customer`, `location`, `date`, `status`, `amount`) VALUES
-(10, '', ',Samsung Galaxy Z Fold 5', 'tharsikan', 'jaffna', '2023-12-14 15:45:27', 0, '529900'),
-(11, '', ',mouse,Samsung Galaxy Z Fold 5,Xiaomi Redmi Note 12S', '', '', '2023-12-14 17:18:36', 0, '608597'),
-(12, '', ',Apple iPhone 15 Pro ,Google Pixel 7 Pro,laddu', 'fdgfg', 'fcvhhgh', '2023-12-15 07:41:28', 0, '1919103'),
-(13, '', ',Samsung Galaxy F54', '', '', '2023-12-15 08:03:24', 0, '139900'),
-(23, 'tharsikan2@gmail.com', ',laddu', '', '', '2023-12-16 17:47:40', 0, '1000000'),
-(24, 'tharsikan4@gmail.com', ',Apple iPhone 15 pro Max ', '', '', '2023-12-17 04:13:33', 0, '579900');
+(25, 'tharsikan7@gmail.com', ',Google Pixel 7 Pro', 'tharsikan7', 'Kaithady south Kaithady', '2024-01-26 08:54:24', 0, '340103'),
+(26, 'tharsikan645@gmail.com', ',samsung galaxy a03s', 'Tharsikan645', 'Kaithady south Kaithady', '2024-01-26 10:04:41', 0, '50990'),
+(30, 'tharsikan645@gmail.com', ',tecno spark 7 pro', 'Tharsikan645', 'Kaithady south Kaithady', '2024-01-26 10:27:35', 0, '33990');
 
 -- --------------------------------------------------------
 
@@ -162,7 +159,8 @@ CREATE TABLE IF NOT EXISTS `reviews` (
 
 INSERT INTO `reviews` (`name`, `email`, `message`, `date`) VALUES
 ('Tharsik', 'tharsikan645@gmail.com', '                  dfdgdgf  ', '2023-12-17 20:54:14'),
-('kumar', 'tharsikan645@gmail.com', '                    very good', '2023-12-17 21:03:41');
+('kumar', 'tharsikan645@gmail.com', '                    very good', '2023-12-17 21:03:41'),
+('Tharsikan7', 'tharsikan7@gmail.com', '              good job      ', '2024-01-26 08:59:25');
 
 -- --------------------------------------------------------
 
@@ -192,6 +190,7 @@ INSERT INTO `user` (`email`, `password`, `username`, `phone`, `is_Admin`, `is_Sa
 ('tharsikan2@gmail.com', '$2y$10$bezAeOPO0uC7TO6Mzn6kyu64p5Pp/.nEMcocajMRDdz4v.DGIcCzu', 'Tharsikan2', '0762354785', NULL, 1, '', '2023-11-28 15:23:29', 1),
 ('tharsikan3@gmail.com', '$2y$10$c6ZLOAa9EHVxCGWo6Z6c3OuzkWPolGTorUC9WnQqhSVzIsKfcAuZy', 'Tharsikan3', '0765454435', 1, NULL, '', '2023-11-28 15:23:29', 1),
 ('tharsikan4@gmail.com', '$2y$10$qV1gk.XVQ/q2sBMYoRkpreJSbHhV/Gq3QJXwii0Utka34Wd1OBBB.', 'Tharsikan4', '0768787878', 1, NULL, '', '2023-11-28 15:23:29', 1),
+('tharsikan645@gmail.com', '$2y$10$59xU9NNTYCDOWaxCXYAz6OKj.RHhyKb1zABXDOWbxVKkgVwgqg.1a', 'Tharsikan645', '0766413644', NULL, NULL, '3e7b5310402bdbf26c01632b774a60b5', '2024-01-26 09:58:21', 1),
 ('tharsikan7@gmail.com', '$2y$10$ktLlCQTNQaQZ6SOGxCyQFeqZO.4.MaOkte1evAZThGYqmqCT6kYbi', 'Tharsikan7', '0765454435', NULL, NULL, 'a5ef064b360c2fc141a2da5edbef48b2', '2023-11-28 16:02:42', 1);
 
 --
