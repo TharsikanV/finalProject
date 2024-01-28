@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 26, 2024 at 10:59 AM
+-- Generation Time: Jan 28, 2024 at 04:52 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -44,15 +44,10 @@ INSERT INTO `image` (`name`, `location`) VALUES
 ('Apple iPhone 15 Pro ', 'upload/Apple-iPhone-15-Pro-768x768.jpg'),
 ('Apple iPhone 15 pro Max ', 'upload/Apple-iPhone-15-Pro-3-1-768x768.jpg'),
 ('Google Pixel 7 Pro', 'upload/Google-Pixel-7-Pro-5G-1-768x768.jpg'),
-('home', 'upload/tharsi.jpg'),
-('laddu', 'upload/1.jpg'),
-('laptop', 'upload/tharsi.jpg'),
-('mouse', 'upload/tharsi.jpg'),
 ('oppo a74 5g', 'upload/p9.jpg'),
 ('oppo a76', 'upload/p8.jpg'),
 ('oppo a78', 'upload/p13.jpg'),
 ('oppo find x5 lite', 'upload/p10.jpg'),
-('phone', 'upload/tharsi.jpg'),
 ('samsung galaxy a03s', 'upload/p20.jpg'),
 ('samsung galaxy a05s', 'upload/p3.jpg'),
 ('Samsung Galaxy F34', 'upload/Galaxy-F34-5G-1-768x768.jpg'),
